@@ -1,11 +1,12 @@
-public class Student
+package swTesting;
+public class asss
 {
     private int id;
     private String name;
     private int marks[];
     private float average;
-    private char grade;
-    public Student(int a,String b,int[] c)
+    private String grade;
+    public asss(int a,String b,int[] c)
     {
         id=a;
         name=b;
@@ -44,11 +45,11 @@ public class Student
     {
         return average;
     }
-    public void setGrade(char n)
+    public void setGrade(String n)
     {
         grade=n;
     }
-    public char getGrade()
+    public String getGrade()
     {
         return grade;
     }
@@ -64,24 +65,73 @@ public class Student
     public void findGrade()
     {
         int min=this.marks[0];
-        for(int b=0;b<this.getMarks().length;b++)
+       for(int b=0;b<this.getMarks().length;b++)
         {
             if(this.marks[b]<min) 
                 {
                     min=this.marks[b];
                 }
         }
-        if(min<50)
+        if(min<60)
         {
-            this.setGrade('F');
+            this.setGrade("F");
+            System.out.println("F");
         }
-        else if(this.getAverage()>=80 && this.getAverage()<=100)
+        else if(this.getAverage()>=97 && this.getAverage()<=100)
         {
-            this.setGrade('O');
+            this.setGrade("A+");
+            System.out.println("A+");
         }
-        else
+        else if(this.getAverage()>=93 && this.getAverage()<97)
         {
-            this.setGrade('A');
+        	this.setGrade("A");
+        	System.out.println("A");
         }
+        else if(this.getAverage()>=90 && this.getAverage()<93)
+        {
+        	this.setGrade("A-");
+        	System.out.println("A-");
+        }
+        else if(this.getAverage()>=87 && this.getAverage()<90)
+        {
+        	this.setGrade("B+");
+        	System.out.println("B+");
+        }
+        else if(this.getAverage()>=83 && this.getAverage()<87)
+        {
+        	this.setGrade("B");
+        	System.out.println("B");
+        }
+        else if(this.getAverage()>=80 && this.getAverage()<83)
+        {
+        	this.setGrade("B-");
+        	System.out.println("B-");
+        }
+        else if(this.getAverage()>=77 && this.getAverage()<80)
+        {
+        	this.setGrade("C+");
+        	System.out.println("C+");
+        }
+        else if(this.getAverage()>=73 && this.getAverage()<77)
+        {
+        	this.setGrade("C");
+        	System.out.println("C");
+        }
+        else if(this.getAverage()>=70 && this.getAverage()<73)
+        {
+        	this.setGrade("C-");
+        	System.out.println("C-");
+        }
+        else if(this.getAverage()>=67 && this.getAverage()<70)
+        {
+        	this.setGrade("D+");
+        	System.out.println("D+");
+        }
+        else if(this.getAverage()>=60 && this.getAverage()<67)
+        {
+        	this.setGrade("D");
+        	System.out.println("D");
+        }
+        
     }
 }
