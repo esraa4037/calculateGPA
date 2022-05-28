@@ -8,9 +8,9 @@ public class Test_calc_gpa {
 	// out of boundaries
 	@Test (expected = Exception.class)
 	public void testCase1() throws Exception {
-		int[] marks = new int[] { -10, 0, 0, 0, 0, 0 };
+		int[] marks = new int[] { -1,-1,-1,-1,-1,-1 };
 		int[] weights = new int[] { 3, 3, 3, 3, 3, 3 };
-		calc_gpa.calc_gpa(marks, weights);
+		Calc_gpa.calc_gpa(marks, weights);
 	}
 	
 	// minimum value
@@ -19,16 +19,16 @@ public class Test_calc_gpa {
 		int[] marks = new int[] { 0, 0, 0, 0, 0, 0 };
 		int[] weights = new int[] { 3, 3, 3, 3, 3, 3 };
 		double expected = 0;
-		double actual = calc_gpa.calc_gpa(marks, weights);
+		double actual = Calc_gpa.calc_gpa(marks, weights);
 		assertEquals(expected, actual,0.01);
 	}
 	
 	@Test
 	public void testCase3() throws Exception {
-		int[] marks = new int[] { 65, 70, 40, 61, 61, 10 };
+		int[] marks = new int[] { 1,1,1,1,1,1};
 		int[] weights = new int[] { 3, 3, 4, 3, 2, 3 };
-		double expected = 0.73;
-		double actual = calc_gpa.calc_gpa(marks, weights);
+		double expected = 0;
+		double actual = Calc_gpa.calc_gpa(marks, weights);
 		actual = Math.round(actual*100.0)/100.0;
 		assertEquals(expected, actual,0.01);
 	}
@@ -38,7 +38,7 @@ public class Test_calc_gpa {
 		int[] marks = new int[] { 65, 70, 40, 61, 70, 80 };
 		int[] weights = new int[] { 3, 3, 4, 3, 2, 3 };
 		double expected = 1.26;
-		double actual = calc_gpa.calc_gpa(marks, weights);
+		double actual = Calc_gpa.calc_gpa(marks, weights);
 		assertEquals(expected, actual,0.01);
 	}
 	
@@ -47,7 +47,7 @@ public class Test_calc_gpa {
 		int[] marks = new int[] { 70, 70, 80, 61, 70, 80 };
 		int[] weights = new int[] { 3, 4, 4, 3, 2, 3 };
 		double expected = 1.96;
-		double actual = calc_gpa.calc_gpa(marks, weights);
+		double actual = Calc_gpa.calc_gpa(marks, weights);
 		assertEquals(expected, actual,0.01);
 	}
 	
@@ -56,7 +56,7 @@ public class Test_calc_gpa {
 		int[] marks = new int[] { 75, 68, 96, 63, 70, 80 };
 		int[] weights = new int[] { 3, 4, 4, 3, 2, 3 };
 		double expected = 2.19;
-		double actual = calc_gpa.calc_gpa(marks, weights);
+		double actual = Calc_gpa.calc_gpa(marks, weights);
 		assertEquals(expected, actual,0.01);
 	}
 	
@@ -65,7 +65,7 @@ public class Test_calc_gpa {
 		int[] marks = new int[] { 75, 68, 96, 76, 86, 91 };
 		int[] weights = new int[] { 3, 4, 4, 3, 2, 3 };
 		double expected = 2.65;
-		double actual = calc_gpa.calc_gpa(marks, weights);
+		double actual = Calc_gpa.calc_gpa(marks, weights);
 		assertEquals(expected, actual,0.01);
 	}
 
@@ -74,16 +74,16 @@ public class Test_calc_gpa {
 		int[] marks = new int[] { 81, 88, 79, 84, 95, 91 };
 		int[] weights = new int[] { 3, 4, 4, 3, 2, 3 };
 		double expected = 3.08;
-		double actual = calc_gpa.calc_gpa(marks, weights);
+		double actual = Calc_gpa.calc_gpa(marks, weights);
 		assertEquals(expected, actual,0.01);
 	}
 	
 	@Test
 	public void testCase9() throws Exception {
-		int[] marks = new int[] { 85, 98, 89, 84, 95, 91 };
+		int[] marks = new int[] { 99, 99, 99, 99, 99, 99 };
 		int[] weights = new int[] { 3, 4, 4, 3, 2, 3 };
-		double expected = 3.49;
-		double actual = calc_gpa.calc_gpa(marks, weights);
+		double expected = 4;
+		double actual = Calc_gpa.calc_gpa(marks, weights);
 		assertEquals(expected, actual,0.01);
 	}
 	
@@ -92,7 +92,7 @@ public class Test_calc_gpa {
 		int[] marks = new int[] { 100, 100, 100, 100, 100, 100 };
 		int[] weights = new int[] { 3, 4, 4, 3, 2, 3 };
 		double expected = 4;
-		double actual = calc_gpa.calc_gpa(marks, weights);
+		double actual = Calc_gpa.calc_gpa(marks, weights);
 		assertEquals(expected, actual,0.01);
 	}
 
@@ -100,9 +100,9 @@ public class Test_calc_gpa {
 	
 	@Test (expected = Exception.class)
 	public void testCase11() throws Exception {
-		int[] marks = new int[] { 200, 200, 200, 200, 200, 200 };
+		int[] marks = new int[] { 101, 101, 101, 101, 101, 101 };
 		int[] weights = new int[] { 3, 3, 3, 3, 3, 3 };
-		calc_gpa.calc_gpa(marks, weights);
+		Calc_gpa.calc_gpa(marks, weights);
 	}
 
 }

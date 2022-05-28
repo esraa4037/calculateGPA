@@ -1,24 +1,24 @@
 import java.util.Scanner;
 
-public class calc_gpa {
+public class Calc_gpa {
+	int[] marks = new int[6];
+	int[] weights = new int[6];
+	
 	public static void main(String args[]) throws Exception {
-		int[] marks = { 90, 90, 80, 70, 40, 80 };
-		float[] gpas = convert_to_gpa(marks);
-
-		int[] weights = { 4, 3, 3, 2, 3, 4 };
-		double gpa = calc_gpa(marks, weights);
-		System.out.println(gpa);
-		System.out.println(getRank(gpa));
-		for (int i = 0; i < gpas.length; i++) {
-			System.out.print(gpas[i] + " ");
+		Calc_gpa cg = new Calc_gpa();
+		cg.solve();
 		}
 
+	public void solve() throws Exception {
+		takeInput(this.marks, this.weights);
+		double result = calc_gpa(this.marks, this.weights);
+		System.out.println("your final result is " + Math.round(result*100.0)/100.0);
 	}
 
-	public static void takeInput(int[] marks, int[] weights) {
+	public void takeInput(int[] marks, int[] weights) {
 
 		Scanner scanner = new Scanner(System.in);
-		for (int i = 0; i < 6; i++) {
+		for (int i = 0; i < marks.length; i++) {
 			marks[i] = scanner.nextInt();
 			weights[i] = scanner.nextInt();
 		}
@@ -37,7 +37,10 @@ public class calc_gpa {
 		return num / den;
 	}
 
-	public static String getRank(double gpa) {
+	public static String getRank(double gpa) throws Exception {
+		if(gpa < 0) {
+			throw new Exception();
+		}
 		if (gpa < 60) {
 			return "F";
 		} else if (gpa >= 97 && gpa <= 100) {
@@ -74,27 +77,25 @@ public class calc_gpa {
 			if(marks[i] > 100) throw new Exception();
 			if (marks[i] < 60) {
 				gpa[i] = 0.0f;
-			} else if (marks[i] >= 94 && marks[i] <= 100) {
+			} else if (marks[i] >= 94) {
 				gpa[i] = 4f;
-			}
-
-			else if (marks[i] >= 90 && marks[i] < 94) {
+			} else if (marks[i] >= 90) {
 				gpa[i] = 3.7f;
-			} else if (marks[i] >= 87 && marks[i] < 90) {
+			} else if (marks[i] >= 87) {
 				gpa[i] = 3.3f;
-			} else if (marks[i] >= 83 && marks[i] < 87) {
+			} else if (marks[i] >= 83) {
 				gpa[i] = 3f;
-			} else if (marks[i] >= 80 && marks[i] < 83) {
+			} else if (marks[i] >= 80) {
 				gpa[i] = 2.7f;
-			} else if (marks[i] >= 77 && marks[i] < 80) {
+			} else if (marks[i] >= 77) {
 				gpa[i] = 2.3f;
-			} else if (marks[i] >= 73 && marks[i] < 77) {
+			} else if (marks[i] >= 73) {
 				gpa[i] = 2f;
-			} else if (marks[i] >= 70 && marks[i] < 73) {
+			} else if (marks[i] >= 70) {
 				gpa[i] = 1.7f;
-			} else if (marks[i] >= 67 && marks[i] < 70) {
+			} else if (marks[i] >= 67) {
 				gpa[i] = 1.3f;
-			} else if (marks[i] >= 60 && marks[i] < 67) {
+			} else if (marks[i] >= 60) {
 				gpa[i] = 1.0f;
 			}
 		}
