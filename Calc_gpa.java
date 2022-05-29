@@ -7,7 +7,7 @@ public class Calc_gpa {
 	public static void main(String args[]) throws Exception {
 		Calc_gpa cg = new Calc_gpa();
 		cg.solve();
-		}
+	}
 
 	public void solve() throws Exception {
 		takeInput(this.marks, this.weights);
@@ -31,8 +31,8 @@ public class Calc_gpa {
 		for (int i = 0; i < marks.length; i++) {
 			num += marks[i] * weights[i];
 		}
-		for (int i = 0; i < marks.length; i++) {
-			den += weights[i];
+		for (int j = 0; j < marks.length; j++) {
+			den += weights[j];
 		}
 		return num / den;
 	}
