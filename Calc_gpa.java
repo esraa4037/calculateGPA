@@ -10,9 +10,11 @@ public class Calc_gpa {
 	}
 
 	public void solve() throws Exception {
+		System.out.println("enter grades and weights.");
 		takeInput(this.marks, this.weights);
 		double result = calc_gpa(this.marks, this.weights);
 		System.out.println("your final result is " + Math.round(result*100.0)/100.0);
+		System.out.println("You got " + getECTS_stub(result));
 	}
 
 	public void takeInput(int[] marks, int[] weights) {
@@ -35,6 +37,21 @@ public class Calc_gpa {
 			den += weights[j];
 		}
 		return num / den;
+	}
+
+	public static String getECTS_stub(double gpa) {
+		if (gpa == 4) {
+			return "A+";
+		} else if (gpa == 3) {
+			return "B";
+		} else if (gpa == 2.3) {
+			return "C+";
+		}
+		return "unknown";
+	}
+	public static String getECTS(double gpa) {
+		
+		return "ECTS";
 	}
 
 	public static String getRank(double gpa) throws Exception {
@@ -101,5 +118,4 @@ public class Calc_gpa {
 		}
 		return gpa;
 	}
-
 }
